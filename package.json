@@ -1,0 +1,11 @@
+{
+  "name": "webpack-1",
+  "version": "1.0.0",
+  "description": "this is my first webpack pro. written by LiuYashion",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LiuYashion",
+  "license": "ISC"
+}

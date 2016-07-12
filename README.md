@@ -80,11 +80,10 @@
 
 	---webpack.config.js
 	var webpack = require('webpack')
-	
 	module.exports = {
-	  entry: './entry.js',
+	  entry: './index.js',
 	  output: {
-	    path: __dirname,
+	    path: './js',
 	    filename: 'bundle.js'
 	  },
 	  module: {
@@ -94,4 +93,33 @@
 	  }
 	}
 
+以及我打包时的代码,注意此处重复打包会累加代码(非清空覆盖)
+
+	$ webpack index.js js.bundle.js
+
 此处我详细列出webpack.config.js的相关配置信息：
+
+- 当entry为字符串时表示文件入口;
+- output为对象,内含输出路径和文件名;
+- 通过正则表达式为不同后缀文件,匹配不同加载器;切图片小于10k时自动处理为base64图片的加载器; 
+ 
+代码如下：
+	
+	var webpack = require('webpack')
+	
+	module.exports = {
+	  entry: './index.js',			
+	  output: {						
+	    path: __dirname,
+	    filename: 'bundle.js'
+	  },
+	  module: {	
+	    loaders: [
+	        { test: /\.js?$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
+	        { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+	        { test: /\.css$/, loader: "style!css" },
+	        { test: /\.less/, loader: 'style-loader!css-loader!less-loader'},
+			{ test: /\.(png|jpg)$/,loader: 'url-loader?limit=10000'}
+	    ]
+	  }
+	}

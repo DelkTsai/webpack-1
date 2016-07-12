@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(1);
+	(function webpackMissingModule() { throw new Error("Cannot find module \"./entry.js\""); }());
 	__webpack_require__(1);
 	module.exports = __webpack_require__(7);
 
@@ -54,7 +54,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	
-	document.write("it works~!!!!!!!!!LiuYahion ")
+	document.write("it works~!!!!!!!!!")
 
 	var temp = __webpack_require__(2)
 	document.write( temp.name )
@@ -470,26 +470,17 @@
 	/* 0 */
 	/***/ function(module, exports, __webpack_require__) {
 
-		__webpack_require__(1);
-		__webpack_require__(1);
-		module.exports = __webpack_require__(7);
+		
+		document.write("it works~!!!!!!!!!")
+
+		var temp = __webpack_require__(1)
+		document.write( temp.name )
+
+		__webpack_require__(2)
 
 
 	/***/ },
 	/* 1 */
-	/***/ function(module, exports, __webpack_require__) {
-
-		
-		document.write("it works~!!!!!!!!!LiuYahion ")
-
-		var temp = __webpack_require__(2)
-		document.write( temp.name )
-
-		__webpack_require__(3)
-
-
-	/***/ },
-	/* 2 */
 	/***/ function(module, exports) {
 
 		
@@ -499,16 +490,16 @@
 
 
 	/***/ },
-	/* 3 */
+	/* 2 */
 	/***/ function(module, exports, __webpack_require__) {
 
 		// style-loader: Adds some css to the DOM by adding a <style> tag
 
 		// load the styles
-		var content = __webpack_require__(4);
+		var content = __webpack_require__(3);
 		if(typeof content === 'string') content = [[module.id, content, '']];
 		// add the styles to the DOM
-		var update = __webpack_require__(6)(content, {});
+		var update = __webpack_require__(5)(content, {});
 		if(content.locals) module.exports = content.locals;
 		// Hot Module Replacement
 		if(false) {
@@ -525,10 +516,10 @@
 		}
 
 	/***/ },
-	/* 4 */
+	/* 3 */
 	/***/ function(module, exports, __webpack_require__) {
 
-		exports = module.exports = __webpack_require__(5)();
+		exports = module.exports = __webpack_require__(4)();
 		// imports
 
 
@@ -539,7 +530,7 @@
 
 
 	/***/ },
-	/* 5 */
+	/* 4 */
 	/***/ function(module, exports) {
 
 		/*
@@ -595,7 +586,7 @@
 
 
 	/***/ },
-	/* 6 */
+	/* 5 */
 	/***/ function(module, exports, __webpack_require__) {
 
 		/*
@@ -845,12 +836,6 @@
 				URL.revokeObjectURL(oldSrc);
 		}
 
-
-	/***/ },
-	/* 7 */
-	/***/ function(module, exports) {
-
-		
 
 	/***/ }
 	/******/ ]);

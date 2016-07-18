@@ -11,7 +11,7 @@
 
 在项目中我们可能会引用到其他js文件（index.js），通过以下语句时便可以把其他js文件打包到我们引用的文件中（bundle.js）中：
 
-	$ webpack index.js js/bundle.js
+	$ webpack index.js js/bundle.js 
 
 此处特地没放在同水目平录，路径使用相对路径即可。
 
